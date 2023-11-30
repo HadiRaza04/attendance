@@ -1,5 +1,6 @@
 const students = {
     "01" : "Aabis",
+    "02" : "Shaheer",
     "03" : "Muhammad Mehdi",
     "04" : "Hammad Raza",
     "05" : "Alishan Raza",
@@ -22,6 +23,7 @@ const students = {
 }
 const studentsWithBatch = {
     "F8-01" : "Aabis",
+    "F8-02" : "Shaheer",
     "F8-03" : "Muhammad Mehdi",
     "F8-04" : "Hammad Raza",
     "F8-05" : "Alishan Raza",
@@ -46,8 +48,8 @@ const studentsWithBatch = {
 // Scanner
 const scanner = new Html5QrcodeScanner('reader', {
     qrbox: {
-        width: 350,
-        height: 350,
+        width: 500,
+        height: 500,
     },
     fps: 25,
 });
@@ -70,6 +72,12 @@ function viewResult(){
     // Remove Duplicate values from an array
     let presentStudents = Array.from(new Set(rollNum));
     console.log(presentStudents);    // ['F8-01', 'F8-02', 'F8-03']
+
+    let matricStudent = presentStudents.filter(item => item.startsWith("F8"));
+    let nineStudent = presentStudents.filter(item => item.startsWith("F9"));
+
+    console.log(matricStudent);
+    console.log(nineStudent);
     
     // Seperate Roll No and Batch No
     const onlyRoll = presentStudents.map((item) => {
@@ -81,7 +89,7 @@ function viewResult(){
     for(let i=0; i<presentStudents.length; i++) {
         presentStudentsName.push(onlyRoll[i][1]);
     }
-    console.log(presentStudentsName);  // ['01', '02', '03']
+    // console.log(presentStudentsName);  // ['01', '02', '03']
 
     document.getElementById("tbody").innerHTML = presentStudents.map((item, index) => {
         return (`

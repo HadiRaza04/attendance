@@ -1,11 +1,39 @@
+/* #body {
+    background: rgb(58, 42, 82);
+} */
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* background-color: antiquewhite; */
+    margin: 40px;
 }
 #reader {
     width: 600px;
+    background-color: rgb(236, 236, 236);
+    border-radius: 20px;
+}
+#reader a {
+    font-size: 50px;
+}
+#reader video {
+    padding: 10px;
+}
+#reader button {
+    width: 250px;
+    height: 100px;
+    font-size: 30px;
+    padding: 10px;
+    border: none;
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+    border-radius: 15px;
+}
+#reader button:hover {
+    background-color: rgb(58, 58, 58);
+    transition: all 0.5s;
+
 }
 #result {
     text-align: center;
